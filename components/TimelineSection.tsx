@@ -1,6 +1,5 @@
-
 import React from 'react';
-import Section from './Section';
+import Section from './Section.tsx';
 import { Flag, Rocket, Settings } from 'lucide-react';
 
 const TimelineSection: React.FC = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from './Section';
+import Section from './Section.tsx';
 import { Megaphone, Globe, Cog, Database, Repeat, UserCheck, ArrowRight, Zap, Layers, BarChart3, Activity } from 'lucide-react';
 
 const WorkflowSection: React.FC = () => {
