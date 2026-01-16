@@ -21,7 +21,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # 罹먯떆 �ㅼ젙�� �쒓굅�섏뿬 package-lock.json �뚯씪�� �놁뼱�� �먮윭媛� 諛쒖깮�섏� �딅룄濡� �⑸땲��.
+          # 캐시 설정을 제거하여 package-lock.json 파일이 없어도 에러가 발생하지 않도록 합니다.
+
 
       - name: Install dependencies
         run: npm install
