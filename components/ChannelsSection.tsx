@@ -38,12 +38,6 @@ const channels = [
     title: "콜드메일 (Outreach)",
     desc: "광고로 닿기 어려운 운송사에 직접 접근",
     details: ["솔루션 기반 시퀀스 자동화", "3단계: 제안 → 리마인드 → 클로징", "KPI: 회신율, 미팅 요청"]
-  },
-  {
-    icon: <Mail className="text-[#123a73]" />,
-    title: "콜드메일 (Outreach)",
-    desc: "광고로 닿기 어려운 운송사에 직접 접근",
-    details: ["솔루션 기반 시퀀스 자동화", "3단계: 제안 → 리마인드 → 클로징", "KPI: 회신율, 미팅 요청"]
   }
 ];
 
@@ -51,7 +45,7 @@ const ChannelsSection: React.FC = () => {
   return (
     <Section id="channels" title="채널별 집행 전략" subtitle="각 채널은 “리드 수집 장치”로 귀결되어야 합니다." className="bg-slate-50">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {channels.slice(0, 6).map((ch, i) => (
+        {channels.map((ch, i) => (
           <div key={i} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition hover:border-[#d5a11e]/50 group">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-[#123a73]/10 rounded-lg flex items-center justify-center group-hover:bg-[#123a73] transition duration-300">
