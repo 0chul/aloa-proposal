@@ -1,15 +1,16 @@
+
 import React from 'react';
-import Layout from './components/Layout.tsx';
-import Hero from './components/Hero.tsx';
-import WhySection from './components/WhySection.tsx';
-import TargetSection from './components/TargetSection.tsx';
-import FunnelSection from './components/FunnelSection.tsx';
-import WorkflowSection from './components/WorkflowSection.tsx';
-import ChannelsSection from './components/ChannelsSection.tsx';
-import MetricsSection from './components/MetricsSection.tsx';
-import ScheduleSection from './components/ScheduleSection.tsx';
-import TimelineSection from './components/TimelineSection.tsx';
-import NextSteps from './components/NextSteps.tsx';
+import Layout from './components/Layout';
+import Hero from './components/Hero';
+import WhySection from './components/WhySection';
+import TargetSection from './components/TargetSection';
+import FunnelSection from './components/FunnelSection';
+import WorkflowSection from './components/WorkflowSection';
+import ChannelsSection from './components/ChannelsSection';
+import MetricsSection from './components/MetricsSection';
+import ScheduleSection from './components/ScheduleSection';
+import TimelineSection from './components/TimelineSection';
+import NextSteps from './components/NextSteps';
 
 function App() {
   return (
