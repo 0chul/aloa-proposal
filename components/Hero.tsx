@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FileText, Target, Zap, ShieldCheck, Download, ChevronRight, Lock, Activity, Database, Share2 } from 'lucide-react';
 
@@ -24,35 +23,26 @@ const Hero: React.FC = () => {
                 </div>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-extrabold text-[#123a73] leading-[1.15] mb-6 tracking-tight">
-              운송사의 성장을 가속하는<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#123a73] via-[#d5a11e] to-[#b88a14]">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-[#123a73] leading-tight mb-8 tracking-tight">
+              운송사의 성장을 가속하는
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#123a73] via-[#d5a11e] to-[#b88a14]">
                 시스템 기반 리드 엔진
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed">
-              본 제안서는 <b>운송사(메인 유저)</b> 타겟으로 Aloa의 리드를 예측 가능하게 확보하기 위한
+            <p className="text-base md:text-lg text-slate-600 mb-12 max-w-lg leading-relaxed">
+              본 제안서는 운송사 타겟으로 Aloa의 리드를<br />
+              예측 가능하게 확보하기 위해 설계된<br />
               디지털 광고 실행 전략 보고서입니다.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-10">
-                <a href="#why" className="px-6 py-3.5 bg-[#123a73] text-white rounded-lg font-bold shadow-lg shadow-[#123a73]/30 hover:bg-[#0b2b57] transition flex items-center gap-2 group">
-                    제안 내용 확인하기
-                    <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <button className="px-6 py-3.5 bg-white text-slate-600 border border-slate-300 rounded-lg font-bold hover:bg-slate-50 transition flex items-center gap-2" onClick={() => alert("데모 페이지입니다. 실제 PDF 다운로드는 제공되지 않습니다.")}>
-                    <Download size={18} />
-                    제안서 PDF 저장
-                </button>
-            </div>
-
-            <div className="bg-[#d5a11e]/10 border border-[#d5a11e]/30 rounded-xl p-5 inline-block max-w-2xl">
+            <div className="bg-[#d5a11e]/10 border border-[#d5a11e]/30 rounded-2xl p-6 inline-block max-w-2xl shadow-sm">
               <p className="text-[#123a73] text-sm md:text-base font-medium flex items-start gap-3">
-                <ShieldCheck className="shrink-0 mt-1 text-[#d5a11e]" size={20} />
+                <ShieldCheck className="shrink-0 mt-1 text-[#d5a11e]" size={22} />
                 <span>
-                  <strong>핵심 원칙:</strong> 단순 "트래픽"이 아닌 <b>"리드(Lead)"</b>를 만듭니다. 
-                  모든 채널은 폼, 신청, 설문, 회신 등 명확한 전환 포인트로 연결됩니다.
+                  <strong className="text-lg block mb-1">핵심 원칙</strong>
+                  단순 "트래픽"이 아닌 <b>"리드(Lead)"</b>를 만듭니다. 모든 채널은 폼, 신청,<br className="hidden md:block" />
+                  설문, 회신 등 명확한 전환 포인트로 연결됩니다.
                 </span>
               </p>
             </div>
