@@ -10,6 +10,7 @@ import ChannelsSection from './components/ChannelsSection';
 import MetricsSection from './components/MetricsSection';
 import ScheduleSection from './components/ScheduleSection';
 import TimelineSection from './components/TimelineSection';
+import BudgetSection from './components/BudgetSection';
 import NextSteps from './components/NextSteps';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <MetricsSection />
       <ScheduleSection />
       <TimelineSection />
+      <BudgetSection />
       <NextSteps />
     </Layout>
   );

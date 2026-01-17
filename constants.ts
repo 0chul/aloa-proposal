@@ -1,3 +1,4 @@
+
 export const COLORS = {
     navy: '#123a73',
     navyDark: '#0b2b57',
@@ -14,4 +15,5 @@ export const COLORS = {
     { label: 'Channels', href: '#channels' },
     { label: 'Metrics', href: '#metrics' },
     { label: 'Timeline', href: '#timeline' },
+    { label: 'Budget', href: '#budget' },
   ];
