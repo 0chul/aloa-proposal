@@ -3,17 +3,16 @@ import React from 'react';
 import Section from './Section';
 import { 
     PieChart, Pie, Cell, ResponsiveContainer, 
-    BarChart, Bar, XAxis, YAxis, Tooltip, Legend, 
-    CartesianGrid, AreaChart, Area, 
-    RadialBarChart, RadialBar 
+    AreaChart, Area, XAxis, YAxis, Tooltip, 
+    CartesianGrid
 } from 'recharts';
 
 const budgetData = [
-  { name: '검색광고', value: 30, color: '#123a73' },
-  { name: '디스플레이', value: 25, color: '#2563eb' },
-  { name: '특화매체', value: 20, color: '#d5a11e' },
-  { name: '콘텐츠', value: 15, color: '#64748b' },
-  { name: '리타겟팅', value: 10, color: '#94a3b8' },
+  { name: '검색광고', value: 30, color: '#123a73', desc: '고관여 타겟 직접 전환' },
+  { name: '디스플레이', value: 25, color: '#2563eb', desc: '브랜드 인지 및 모수 확장' },
+  { name: '특화매체', value: 20, color: '#d5a11e', desc: '운송/물류 전문 타겟팅' },
+  { name: '콘텐츠', value: 15, color: '#64748b', desc: '신뢰 구축 및 정보 제공' },
+  { name: '리타겟팅', value: 10, color: '#94a3b8', desc: '이탈 유저 재유입 유도' },
 ];
 
 const projectionData = [
@@ -25,26 +24,29 @@ const projectionData = [
   { month: '6월', traffic: 12000, leads: 310, cost: 25 },
 ];
 
-const efficiencyData = [
-  { name: '신뢰도', value: 85, fill: '#123a73' },
-  { name: '도달율', value: 70, fill: '#2563eb' },
-  { name: '정확도', value: 92, fill: '#d5a11e' },
-  { name: '비용효율', value: 65, fill: '#64748b' },
-];
-
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
+    if (payload[0].name === '검색광고' || payload[0].payload.name) {
+         // Pie Chart Tooltip
+         return (
+            <div className="bg-white p-3 border border-slate-200 shadow-xl rounded-lg">
+                <p className="font-bold text-[#123a73] text-sm">{payload[0].name}</p>
+                <p className="text-xs text-slate-500">{payload[0].value}%</p>
+            </div>
+         )
+    }
+    // Area Chart Tooltip
     return (
       <div className="bg-white p-4 border border-slate-200 shadow-2xl rounded-xl">
         <p className="font-bold text-[#123a73] mb-2 border-b border-slate-100 pb-1">{label}</p>
         <div className="space-y-1">
             <p className="text-xs flex justify-between gap-4">
                 <span className="text-slate-500">예상 리드:</span>
-                <span className="font-bold text-[#123a73]">{payload[1].value}건</span>
+                <span className="font-bold text-[#123a73]">{payload[0].value}건</span>
             </p>
             <p className="text-xs flex justify-between gap-4">
                 <span className="text-slate-500">리드 단가:</span>
-                <span className="font-bold text-[#d5a11e]">{payload[0].value}천원</span>
+                <span className="font-bold text-[#d5a11e]">{payload[1].value}천원</span>
             </p>
         </div>
       </div>
@@ -58,8 +60,9 @@ const MetricsSection: React.FC = () => {
     <Section id="metrics" title="측정 및 예산 배분" subtitle="데이터 기반의 의사결정과 예측 가능한 성장">
       <div className="grid lg:grid-cols-12 gap-8">
         
-        {/* Left: Main Growth Projection */}
+        {/* Left: Main Growth Projection & Budget */}
         <div className="lg:col-span-8 space-y-8">
+            {/* Simulation Chart */}
             <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm overflow-hidden relative">
                 <div className="flex items-center justify-between mb-8">
                     <div>
@@ -102,40 +105,67 @@ const MetricsSection: React.FC = () => {
                 </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
-                    <h3 className="font-bold text-[#123a73] mb-4 text-sm flex items-center justify-between">
-                        매체별 예산 비중
-                        <span className="text-[10px] text-slate-400 font-normal">Monthly Allocation</span>
-                    </h3>
-                    <div className="h-56">
+            {/* Budget Allocation (Redesigned & Expanded) */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                 <div className="flex items-center justify-between mb-6">
+                    <div>
+                         <h3 className="font-bold text-[#123a73] text-lg">매체별 예산 최적화 (Budget Allocation)</h3>
+                         <p className="text-xs text-slate-400">채널별 성과 기여도에 따른 유동적 배분 모델</p>
+                    </div>
+                 </div>
+
+                 <div className="flex flex-col md:flex-row items-center gap-12">
+                    {/* Chart Side */}
+                    <div className="w-full md:w-1/2 h-64 relative">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
-                                <Pie data={budgetData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
+                                <Pie 
+                                    data={budgetData} 
+                                    cx="50%" 
+                                    cy="50%" 
+                                    innerRadius={60} 
+                                    outerRadius={90} 
+                                    paddingAngle={5} 
+                                    dataKey="value"
+                                >
                                     {budgetData.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.color} />
+                                        <Cell key={`cell-${index}`} fill={entry.color} strokeWidth={2} stroke="#fff" />
                                     ))}
                                 </Pie>
-                                <Tooltip />
-                                <Legend verticalAlign="bottom" height={36} iconType="circle" wrapperStyle={{fontSize: '11px'}} />
+                                <Tooltip content={<CustomTooltip />} />
                             </PieChart>
                         </ResponsiveContainer>
+                        {/* Center Label */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+                            <div className="text-2xl font-black text-[#123a73]">Total</div>
+                            <div className="text-[10px] text-slate-400 font-bold uppercase">Budget</div>
+                        </div>
                     </div>
-                </div>
-                <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
-                    <h3 className="font-bold text-[#123a73] mb-4 text-sm flex items-center justify-between">
-                        전략 엔진 효율 지표
-                        <span className="text-[10px] text-slate-400 font-normal">Strategy Performance</span>
-                    </h3>
-                    <div className="h-56">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={efficiencyData}>
-                                <RadialBar background dataKey="value" cornerRadius={5} />
-                                <Legend iconSize={10} layout="vertical" verticalAlign="middle" align="right" wrapperStyle={{fontSize: '10px'}} />
-                                <Tooltip />
-                            </RadialBarChart>
-                        </ResponsiveContainer>
+
+                    {/* Legend Side (Moved here to fix overlap issue) */}
+                    <div className="w-full md:w-1/2 space-y-3">
+                        {budgetData.map((item, idx) => (
+                            <div key={idx} className="flex items-center justify-between group p-2 rounded-lg hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-3 h-3 rounded-full shrink-0 shadow-sm" style={{ backgroundColor: item.color }}></div>
+                                    <div>
+                                        <div className="text-sm font-bold text-slate-700">{item.name}</div>
+                                        <div className="text-[10px] text-slate-400">{item.desc}</div>
+                                    </div>
+                                </div>
+                                <div className="text-sm font-bold text-[#123a73] bg-blue-50/50 px-2 py-1 rounded">
+                                    {item.value}%
+                                </div>
+                            </div>
+                        ))}
                     </div>
+                 </div>
+
+                <div className="mt-6 pt-4 border-t border-slate-100 text-center md:text-left">
+                    <p className="text-[11px] text-slate-400 flex items-center gap-2 justify-center md:justify-start">
+                        <span className="w-1 h-1 rounded-full bg-[#d5a11e]"></span>
+                        실제 광고 집행 효율 및 입찰가 변동에 따라 예산 비중은 실시간으로 조정될 수 있습니다.
+                    </p>
                 </div>
             </div>
         </div>
