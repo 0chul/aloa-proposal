@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { FileText, Target, Zap, ShieldCheck, Download, ChevronRight, Lock } from 'lucide-react';
+import { FileText, Target, Zap, ShieldCheck, Download, ChevronRight, Lock, Activity, Database, Share2 } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -9,9 +10,9 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#d5a11e]/10 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
 
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid md:grid-cols-12 gap-12 items-start">
+        <div className="grid md:grid-cols-12 gap-12 items-center">
           
-          <div className="md:col-span-8">
+          <div className="md:col-span-7">
             <div className="flex flex-wrap gap-3 mb-6">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#123a73]/10 text-[#123a73] text-xs font-bold tracking-wider border border-[#123a73]/20">
                     <Zap size={14} fill="#123a73" className="text-[#123a73]" />
@@ -57,38 +58,79 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="md:col-span-4">
-            <div className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl p-6 shadow-2xl shadow-slate-200/50 sticky top-24 transform hover:-translate-y-1 transition duration-500">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#123a73] to-[#d5a11e] rounded-t-2xl"></div>
-              <h3 className="text-[#123a73] font-bold text-lg mb-5 flex items-center gap-2 border-b border-slate-100 pb-3">
-                <FileText size={20} />
-                제안 범위 (Scope)
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "대행 범위: 디지털 광고 ~ 리드 확보",
-                  "비즈니스 전략(상품/가격) 제외",
-                  "타겟: 화물 운송사/주선사"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                    <div className="w-5 h-5 rounded-full bg-[#123a73]/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#123a73]" />
+          <div className="md:col-span-5">
+            <div className="relative">
+                {/* Visual Lead Engine Mockup */}
+                <div className="bg-white/80 backdrop-blur-md border border-slate-200 rounded-3xl p-8 shadow-2xl relative z-10 overflow-hidden">
+                    <div className="absolute top-0 right-0 p-4 opacity-10">
+                        <Activity size={100} className="text-[#123a73]" />
                     </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="mt-6 pt-6 border-t border-slate-100">
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-3">Target Channels</p>
-                <div className="flex flex-wrap gap-2">
-                  {['검색광고', '디스플레이', '리타겟팅', '특화매체', '콜드메일'].map(tag => (
-                    <span key={tag} className="px-2.5 py-1 bg-slate-100 text-slate-600 text-[11px] rounded-full font-medium border border-slate-200">
-                      {tag}
-                    </span>
-                  ))}
+                    <h3 className="text-[#123a73] font-bold mb-6 flex items-center gap-2">
+                        <Database size={20} className="text-[#d5a11e]" />
+                        Lead Engine Architecture
+                    </h3>
+                    
+                    <div className="space-y-6">
+                        {/* Flow Visual */}
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2">
+                                <span>Input</span>
+                                <span>System</span>
+                                <span>Output</span>
+                            </div>
+                            <div className="relative h-24 bg-slate-50 rounded-2xl border border-slate-100 p-4 flex items-center justify-around overflow-hidden">
+                                <div className="absolute inset-0 pointer-events-none opacity-20">
+                                    <svg width="100%" height="100%" viewBox="0 0 400 100" fill="none">
+                                        <path d="M50 50 Q 200 10, 350 50" stroke="#123a73" strokeWidth="2" strokeDasharray="5 5" className="animate-dash" />
+                                        <path d="M50 50 Q 200 90, 350 50" stroke="#d5a11e" strokeWidth="2" strokeDasharray="5 5" className="animate-dash" />
+                                    </svg>
+                                </div>
+                                <div className="w-12 h-12 bg-[#123a73] rounded-xl flex items-center justify-center text-white shadow-lg relative z-10">
+                                    <Share2 size={20} />
+                                </div>
+                                <div className="w-16 h-16 bg-white border-2 border-[#d5a11e] rounded-full flex items-center justify-center shadow-xl relative z-10">
+                                    <div className="w-10 h-10 bg-[#d5a11e]/10 rounded-full flex items-center justify-center animate-pulse">
+                                        <Target size={24} className="text-[#d5a11e]" />
+                                    </div>
+                                </div>
+                                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white shadow-lg relative z-10">
+                                    <Zap size={20} fill="currentColor" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                                <div className="text-2xl font-black text-[#123a73]">1.2k+</div>
+                                <div className="text-[10px] text-slate-500 font-bold">AVG. MONTHLY TRAFFIC</div>
+                            </div>
+                            <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                                <div className="text-2xl font-black text-[#d5a11e]">4.8%</div>
+                                <div className="text-[10px] text-slate-500 font-bold">CONVERSION RATE</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-slate-100">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+                                <FileText size={16} className="text-slate-400" />
+                            </div>
+                            <span className="text-sm font-bold text-slate-700">제안 범위 (Core Scope)</span>
+                        </div>
+                        <ul className="space-y-3">
+                            {['디지털 광고 매체 믹스', '리드 전환 최적화 랜딩', '데이터 트래킹 시스템'].map((item, i) => (
+                                <li key={i} className="flex items-center gap-2 text-xs text-slate-500">
+                                    <div className="w-1 h-1 rounded-full bg-[#d5a11e]" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-              </div>
+                {/* Visual decorative circles */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#d5a11e] rounded-full opacity-10 blur-2xl"></div>
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#123a73] rounded-full opacity-10 blur-2xl"></div>
             </div>
           </div>
 
