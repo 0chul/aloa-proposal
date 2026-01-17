@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from './Section.tsx';
+import Section from './Section';
 import { Eye, Search, MousePointerClick, Filter, ArrowDown, Share2, Target, Zap, ChevronDown } from 'lucide-react';
 
 const FunnelSection: React.FC = () => {
