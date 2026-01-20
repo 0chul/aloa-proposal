@@ -29,7 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
             <div className="leading-tight">
               <div className="text-slate-500 text-xs tracking-wider">Carta Mobility</div>
-              <div className="text-[#123a73] font-bold text-lg">Aloa Proposal</div>
+              <div className="text-[#123a73] font-bold text-lg">ALOA Proposal</div>
             </div>
           </div>
 
@@ -43,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <footer className="bg-slate-900 text-slate-400 py-12 text-center text-sm">
         <div className="max-w-4xl mx-auto px-4">
           <p className="mb-4">
-            본 문서는 Carta Mobility Aloa의 디지털 광고 실행 전략 제안 페이지입니다.<br/>
+            본 문서는 Carta Mobility ALOA의 디지털 광고 실행 전략 제안 페이지입니다.<br/>
             (예산 수치 및 일부 경쟁사 정보는 제외됨)
           </p>
           <div className="flex justify-center gap-4 mt-8">

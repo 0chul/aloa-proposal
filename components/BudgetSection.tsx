@@ -9,24 +9,6 @@ const BudgetSection: React.FC = () => {
 
   const plans = [
     {
-      price: "100",
-      unit: "만원/월",
-      title: "검증형 (Validation)",
-      desc: "리드 가능성과 병목을 6개월 안에 확인",
-      theme: "slate",
-      data: [
-        { name: '검색광고', value: 70 },
-        { name: '리타겟팅', value: 20 },
-        { name: '콜드메일/기타', value: 10 },
-      ],
-      details: [
-        "네이버 중심 + 구글 보조",
-        "방문자/폼이탈 최소 리타겟팅",
-        "키워드 10~30개 핵심만 운영"
-      ],
-      expectation: "리드가 안 나오는 달도 발생 가능. CPL 감 잡기와 병목 발견이 핵심 목표."
-    },
-    {
       price: "300",
       unit: "만원/월",
       title: "최소 운영형 (Standard)",
@@ -70,13 +52,13 @@ const BudgetSection: React.FC = () => {
   ];
 
   const tableRows = [
-    { label: "포지션", v100: "“될지 안 될지” 빠른 검증", v300: "리드가 ‘쌓이는 구조’ 확보", v500: "테스트가 ‘의미 있게’ 돌아감" },
-    { label: "필수 세팅", v100: "전환/UTM/폼 최소 1회", v300: "전환/세그먼트 정교화", v500: "이벤트 확장 + A/B 상시" },
-    { label: "검색광고", v100: "상시 ON (핵심 10~30개)", v300: "상시 ON + 매칭 확장", v500: "상시 ON + 승자군 스케일" },
-    { label: "리타겟팅", v100: "최소 ON (핵심/이탈)", v300: "상시 ON (세그먼트 분기)", v500: "상시 ON + 시나리오(2~3단)" },
-    { label: "디스플레이", v100: "보류 (우선순위 낮음)", v300: "소량 ON (모수 확장용)", v500: "상시 ON (확장+리타겟 연계)" },
-    { label: "특화매체/eDM", v100: "보류", v300: "단발 1회 가능성", v500: "단발 1~2회 의미 있게 운영" },
-    { label: "콜드메일", v100: "선택 (아주 얇게)", v300: "ON (시퀀스 운영)", v500: "ON (세그먼트/카피 실험)" },
+    { label: "포지션", v300: "리드가 ‘쌓이는 구조’ 확보", v500: "테스트가 ‘의미 있게’ 돌아감" },
+    { label: "필수 세팅", v300: "전환/세그먼트 정교화", v500: "이벤트 확장 + A/B 상시" },
+    { label: "검색광고", v300: "상시 ON + 매칭 확장", v500: "상시 ON + 승자군 스케일" },
+    { label: "리타겟팅", v300: "상시 ON (세그먼트 분기)", v500: "상시 ON + 시나리오(2~3단)" },
+    { label: "디스플레이", v300: "소량 ON (모수 확장용)", v500: "상시 ON (확장+리타겟 연계)" },
+    { label: "특화매체/eDM", v300: "단발 1회 가능성", v500: "단발 1~2회 의미 있게 운영" },
+    { label: "콜드메일", v300: "ON (시퀀스 운영)", v500: "ON (세그먼트/카피 실험)" },
   ];
 
   const CustomTooltip = ({ active, payload }: any) => {
@@ -92,7 +74,7 @@ const BudgetSection: React.FC = () => {
   };
 
   return (
-    <Section id="budget" title="예산 및 플랜 제안" subtitle="성장 단계에 맞춘 3가지 실행 옵션">
+    <Section id="budget" title="예산 및 플랜 제안" subtitle="성장 단계에 맞춘 2가지 실행 옵션">
       
       {/* Core Principles */}
       <div className="grid md:grid-cols-3 gap-4 mb-16">
@@ -126,7 +108,7 @@ const BudgetSection: React.FC = () => {
       </div>
 
       {/* Plan Cards */}
-      <div className="grid lg:grid-cols-3 gap-8 mb-20 items-start">
+      <div className="grid lg:grid-cols-2 gap-8 mb-20 items-start max-w-5xl mx-auto">
         {plans.map((plan, i) => (
             <div key={i} className={`relative flex flex-col h-full bg-white rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 ${
                 plan.featured ? 'border-2 border-[#123a73] shadow-xl scale-105 z-10' : 'border border-slate-200 shadow-sm'
@@ -193,7 +175,7 @@ const BudgetSection: React.FC = () => {
       </div>
 
       {/* Comparison Table */}
-      <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+      <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm max-w-6xl mx-auto">
         <div className="p-6 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
             <h3 className="font-bold text-[#123a73] flex items-center gap-2">
                 <TrendingUp size={20} />
@@ -205,24 +187,21 @@ const BudgetSection: React.FC = () => {
             <table className="w-full text-sm text-left">
                 <thead>
                     <tr className="bg-slate-50 text-slate-500 border-b border-slate-200">
-                        <th className="py-4 px-6 font-bold w-[15%]">구분</th>
-                        <th className="py-4 px-6 font-bold w-[25%] text-slate-400">100만원 (검증형)</th>
-                        <th className="py-4 px-6 font-bold w-[30%] text-[#123a73]">300만원 (최소 운영형)</th>
-                        <th className="py-4 px-6 font-bold w-[30%] text-[#d5a11e]">500만원 (확장형)</th>
+                        <th className="py-4 px-6 font-bold w-[20%]">구분</th>
+                        <th className="py-4 px-6 font-bold w-[40%] text-[#123a73]">300만원 (최소 운영형)</th>
+                        <th className="py-4 px-6 font-bold w-[40%] text-[#d5a11e]">500만원 (확장형)</th>
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                     {tableRows.map((row, idx) => (
                         <tr key={idx} className={`hover:bg-slate-50 transition ${idx === tableRows.length - 1 ? 'bg-amber-50/30' : ''}`}>
                             <td className="py-4 px-6 font-bold text-slate-700 bg-slate-50/50">{row.label}</td>
-                            <td className="py-4 px-6 text-slate-500">{row.v100}</td>
                             <td className={`py-4 px-6 font-medium ${idx === tableRows.length - 1 ? 'text-[#123a73]' : 'text-slate-700'}`}>{row.v300}</td>
                             <td className={`py-4 px-6 font-medium ${idx === tableRows.length - 1 ? 'text-[#d5a11e]' : 'text-slate-700'}`}>{row.v500}</td>
                         </tr>
                     ))}
                      <tr className="bg-[#123a73] text-white">
                         <td className="py-4 px-6 font-bold border-r border-white/10">6개월 후<br/>보이는 결과</td>
-                        <td className="py-4 px-6 border-r border-white/10 text-slate-300 text-xs">리드가 안 나오는 달도 존재<br/>→ 병목 파악이 성과</td>
                         <td className="py-4 px-6 border-r border-white/10 text-white font-bold">채널 2~3개에서<br/>리드가 꾸준히 발생</td>
                         <td className="py-4 px-6 text-[#d5a11e] font-bold">승자 조합 고정 +<br/>확장 루프 작동</td>
                     </tr>
@@ -232,7 +211,7 @@ const BudgetSection: React.FC = () => {
       </div>
 
       {/* Footnotes */}
-      <div className="mt-6 flex gap-4 text-[11px] text-slate-400 px-4 flex-wrap">
+      <div className="mt-6 flex gap-4 text-[11px] text-slate-400 px-4 flex-wrap justify-center">
         <div className="flex items-center gap-1.5">
             <AlertTriangle size={12} className="text-[#d5a11e]" />
             <span><b>리멤버 리드젠서베이:</b> 설문 기반 구매 의향 확인 (B2B 타겟)</span>

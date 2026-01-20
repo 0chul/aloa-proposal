@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Section from './Section';
 import { CheckCircle2, Calendar, Layout, Sparkles } from 'lucide-react';
@@ -45,7 +46,7 @@ const NextSteps: React.FC = () => {
         
         <div className="relative z-10">
             <Sparkles className="mx-auto mb-4 text-[#d5a11e]" size={32} />
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Aloa의 성장 엔진에 시동을 걸 시간입니다.</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">ALOA의 성장 엔진에 시동을 걸 시간입니다.</h3>
             <p className="text-slate-300 max-w-lg mx-auto mb-8">
               지금 제안드린 전략은 단순한 광고 집행이 아니라,<br className="hidden md:block"/>
               지속 가능한 리드 파이프라인을 구축하는 과정입니다.

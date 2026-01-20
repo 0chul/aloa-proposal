@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { FileText, Target, Zap, ShieldCheck, Download, ChevronRight, Lock, Activity, Database, Share2 } from 'lucide-react';
 
@@ -31,7 +32,7 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="text-base md:text-lg text-slate-600 mb-12 max-w-lg leading-relaxed">
-              본 제안서는 운송사 타겟으로 Aloa의 리드를<br />
+              본 제안서는 운송사 타겟으로 ALOA의 리드를<br />
               예측 가능하게 확보하기 위해 설계된<br />
               디지털 광고 실행 전략 보고서입니다.
             </p>
