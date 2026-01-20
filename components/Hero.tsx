@@ -25,14 +25,14 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-2xl md:text-4xl font-extrabold text-[#123a73] leading-tight mb-8 tracking-tight">
-              운송사의 성장을 가속하는
+              운송사/화주사 인지도를 늘리는
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#123a73] via-[#d5a11e] to-[#b88a14]">
                 시스템 기반 리드 엔진
               </span>
             </h1>
             
             <p className="text-base md:text-lg text-slate-600 mb-12 max-w-lg leading-relaxed">
-              본 제안서는 운송사 타겟으로 ALOA의 리드를<br />
+              본 제안서는 운송사/화주사 타겟으로 ALOA의 리드를<br />
               예측 가능하게 확보하기 위해 설계된<br />
               디지털 광고 실행 전략 보고서입니다.
             </p>
